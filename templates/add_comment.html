@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title%}Izoh yozish{% endblock title%}
+
+{% block content %}
+    <h1>Izohingizni kiriting!</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button class="btn btn-success ml-2" type="submit">Saqlash</button>
+    </form>
+{% endblock content %}

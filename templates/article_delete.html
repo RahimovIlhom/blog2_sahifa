@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Postni o'chirish{% endblock title %}
+
+{% block content %}
+    <h1>Postni o'chirish</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>{{ article.title }} nomli postni o'chirishni istaysizmi!</p>
+        <button class="btn btn-danger ml-2" type="submit">Ha</button>
+        <a href="{% url 'article_detail' article.pk %}" class="btn btn-primary ml-2">Yo'q</a>
+    </form>
+{% endblock content %}
